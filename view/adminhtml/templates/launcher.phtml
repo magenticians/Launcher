@@ -1,0 +1,13 @@
+<?php
+/**
+ * @var $this Magenticians\Launcher\Block\LauncherItems
+ */
+?>
+
+<script type="text/javascript">
+var launcher_items = <?php echo $this->getMenuJson(); ?>;
+</script>
+
+<div id="magenticians-launcher-dialog" title="Launcher">
+    <input style="width: 100%;" placeholder="Awaiting command." type="text" id="magenticians-launcher-input" />
+</div>
