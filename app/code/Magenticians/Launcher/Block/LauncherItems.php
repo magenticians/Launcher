@@ -102,27 +102,7 @@ class LauncherItems extends \Magento\Backend\Block\Template
     public function getMenuJson()
     {
         $menuArray = $this->getMenuArray($this->getMenuModel());
-
-        // Trickery to properly process the secret key scheme of Magento
-        // Calling preg_replace on every menu item is probably expensive
-        // Using it directly on JSON does not work (the URLs its slashes are escaped and break the RegEx used)
-        $menuUrls = '';
-
-        foreach ($menuArray as $menuItem) {
-            if (! empty($menuUrls)) {
-                $menuUrls .= ', ';
-            }
-
-            $menuUrls .= $menuItem['value'];
-        }
-
-        $menuUrls = $this->replaceSecretKeys($menuUrls);
-
-        foreach (explode(', ', $menuUrls) as $pos => $menuUrl) {
-            $menuArray[$pos]['value'] = $menuUrl;
-        }
-
-        return json_encode($menuArray);
+        return json_encode($menuArray, JSON_UNESCAPED_SLASHES);
     }
 
     /**
@@ -133,7 +113,7 @@ class LauncherItems extends \Magento\Backend\Block\Template
      * @param   string $html
      * @return  string
      */
-    public function replaceSecretKeys($html)
+    public function _afterToHtml($html)
     {
         $html = preg_replace_callback(
             '#' . \Magento\Backend\Model\UrlInterface::SECRET_KEY_PARAM_NAME . '/\$([^\/].*)/([^\/].*)/([^\$].*)\$#U',

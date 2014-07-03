@@ -1,11 +1,19 @@
 #magenticians-launcher-toolbar {
     display: inline-block;
-    color: #fff;
     font-weight: bold;
     font-size: 31px;
     vertical-align: top;
-    position: relative;
 }
 #magenticians-launcher-toolbar > a {
     color: #fff;
+}
+#magenticians-launcher-toolbar > a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+#magenticians-launcher-dialog {
+    display: none;
+}
+#magenticians-launcher-input {
+    width: 100%;
 }

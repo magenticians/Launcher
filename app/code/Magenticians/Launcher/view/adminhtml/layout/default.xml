@@ -15,7 +15,7 @@
     </referenceContainer>
 
     <referenceContainer name="header">
-        <block class="Magenticians\Launcher\Block\ToolbarEntry" before="search" name="launcher_toolbar_entry" />
+        <block class="Magento\Framework\View\Element\Template" before="search" name="launcher_toolbar_entry" template="Magenticians_Launcher::toolbar_entry.phtml" />
     </referenceContainer>
 
     <referenceContainer name="before_body_end">
