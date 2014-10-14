@@ -1,0 +1,25 @@
+{
+    "name": "magenticians/launcher",
+    "version": "0.0.1",
+    "type": "magento2-module",
+    "homepage": "http://magenticians.com/tag/launcher",
+    "description": "Magento 2 module which adds a launcher to the Magento 2 backend interface. Inspired by PulseStormLauncher.",
+    "authors": [
+        {
+            "name": "Elias",
+            "homepage": "http://eliaszerrouq.nl"
+        }
+    ],
+    "require": {
+        "magento/framework": "0.1.*"
+    },
+    "extra": {
+        "map": [
+            [
+                "src/Magenticians/Launcher",
+                "Magenticians/Launcher"
+            ]
+        ]
+    }
+}
+

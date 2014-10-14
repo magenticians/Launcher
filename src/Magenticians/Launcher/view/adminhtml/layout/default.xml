@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <head>
+        <link src="Magenticians_Launcher::js/launcher.js"/>
+        <link src="Magenticians_Launcher::css/launcher.css"/>
+    </head>
+
+    <referenceContainer name="header">
+        <block class="Magento\Framework\View\Element\Template" before="search" name="launcher_toolbar_entry" template="Magenticians_Launcher::toolbar_entry.phtml" />
+    </referenceContainer>
+
+    <referenceContainer name="before.body.end">
+        <block class="Magenticians\Launcher\Block\LauncherItems" name="launcher_items" />
+    </referenceContainer>
+</page>
