@@ -114,7 +114,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 /** @var $section \Magento\Backend\Model\Config\Structure\Element\Section */
 
                 // We need the label & url again for the sub sections
-                $sectionLabel = $itemPrefix . $section->getLabel() . $itemsSeparator . $section->getLabel();
+                $sectionLabel = $itemPrefix . $tab->getLabel() . $itemsSeparator . $section->getLabel();
                 $sectionUrl = $this->_url->getUrl('adminhtml/system_config/edit', array('section' => $section->getId()));
 
                 // First add global section to the launcher items...
