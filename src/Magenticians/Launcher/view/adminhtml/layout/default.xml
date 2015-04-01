@@ -5,11 +5,13 @@
         <css src="Magenticians_Launcher::css/launcher.css"/>
     </head>
 
-    <referenceContainer name="header">
-        <block class="Magento\Framework\View\Element\Template" before="search" name="launcher_toolbar_entry" template="Magenticians_Launcher::toolbar_entry.phtml" />
-    </referenceContainer>
+    <body>
+        <referenceContainer name="header.inner.left">
+            <block class="Magento\Framework\View\Element\Template" before="notification.messages" name="launcher_toolbar_entry" template="Magenticians_Launcher::toolbar_entry.phtml" />
+        </referenceContainer>
 
-    <referenceContainer name="before.body.end">
-        <block class="Magenticians\Launcher\Block\LauncherItems" name="launcher_items" />
-    </referenceContainer>
+        <referenceContainer name="before.body.end">
+            <block class="Magenticians\Launcher\Block\LauncherItems" />
+        </referenceContainer>
+    </body>
 </page>

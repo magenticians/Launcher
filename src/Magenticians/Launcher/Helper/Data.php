@@ -19,7 +19,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     protected $_url;
 
     /**
-     * @var \Magento\Backend\Model\Config\Structure
+     * @var \Magento\Config\Model\Config\Structure
      */
     protected $_configStructure;
 
@@ -28,14 +28,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
      * @param \Magento\Backend\Model\Menu\Filter\IteratorFactory $iteratorFactory
      * @param \Magento\Backend\Block\Menu $blockMenu
      * @param \Magento\Backend\Model\UrlInterface $url
-     * @param \Magento\Backend\Model\Config\Structure $configStructure
+     * @param \Magento\Config\Model\Config\Structure $configStructure
      */
     public function __construct(
         \Magento\Framework\App\Helper\Context $context,
         \Magento\Backend\Model\Menu\Filter\IteratorFactory $iteratorFactory,
         \Magento\Backend\Block\Menu $blockMenu,
         \Magento\Backend\Model\UrlInterface $url,
-        \Magento\Backend\Model\Config\Structure $configStructure
+        \Magento\Config\Model\Config\Structure $configStructure
     ) {
         parent::__construct($context);
         $this->_iteratorFactory = $iteratorFactory;
@@ -108,10 +108,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $sections = array();
 
         foreach ($this->_configStructure->getTabs() as $tab) {
-            /** @var $tab \Magento\Backend\Model\Config\Structure\Element\Tab */
+            /** @var $tab \Magento\Config\Model\Config\Structure\Element\Tab */
 
             foreach ($tab->getChildren() as $section) {
-                /** @var $section \Magento\Backend\Model\Config\Structure\Element\Section */
+                /** @var $section \Magento\Config\Model\Config\Structure\Element\Section */
 
                 // We need the label & url again for the sub sections
                 $sectionLabel = $itemPrefix . $tab->getLabel() . $itemsSeparator . $section->getLabel();
@@ -121,7 +121,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 $sections[] = ['label' => $sectionLabel, 'value' => $sectionUrl];
 
                 foreach ($section->getChildren() as $subSection) {
-                    /** @var $subSection \Magento\Backend\Model\Config\Structure\Element\Section */
+                    /** @var $subSection \Magento\Config\Model\Config\Structure\Element\Section */
 
                     // ...then add all sub sections
                     $sections[] = [

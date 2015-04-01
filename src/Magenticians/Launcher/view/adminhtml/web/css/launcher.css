@@ -2,14 +2,14 @@
     display: inline-block;
     font-weight: bold;
     font-size: 31px;
-    vertical-align: top;
+    margin-top: -3px;
+    float: right;
 }
 #magenticians-launcher-toolbar > a {
-    color: #fff;
+    color: #41362f !important; /** temporarily important because module-sequence doesn't seem to be working */
 }
 #magenticians-launcher-toolbar > a:hover {
-    color: #ccc;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 #magenticians-launcher-dialog {
     display: none;
