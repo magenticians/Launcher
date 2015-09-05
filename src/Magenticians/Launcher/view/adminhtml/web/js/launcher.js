@@ -1,8 +1,13 @@
 require([
     'jquery',
-    'jquery/ui'
+    'jquery/ui',
+    'jquery/jstree/jquery.hotkeys'
 ], function($) {
     $(function() {
+        $(document).bind('keydown', launcher_keyboard_sequence_a + '+' + launcher_keyboard_sequence_b, function() {
+            $('#magenticians-launcher-link').click();
+        });
+
         $('#magenticians-launcher-link').click(function () {
             $('#magenticians-launcher-dialog').dialog({
                 //autoOpen: true,

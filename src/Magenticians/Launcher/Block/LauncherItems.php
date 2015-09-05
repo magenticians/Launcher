@@ -7,6 +7,10 @@ class LauncherItems extends \Magento\Backend\Block\Template
 
     const CONFIG_ITEMS_PREFIX = 'Configuration - ';
 
+    const FIRST_SEQUENCE_KEY_CONFIG_PATH = 'magenticians_launcher/keyboard/sequence_a';
+
+    const SECOND_SEQUENCE_KEY_CONFIG_PATH = 'magenticians_launcher/keyboard/sequence_b';
+
     protected $_template = 'launcher.phtml';
 
     /**
@@ -46,6 +50,24 @@ class LauncherItems extends \Magento\Backend\Block\Template
         $configSectionsArray = $this->_dataHelper->getConfigSectionsArray(self::ITEMS_SEPARATOR, self::CONFIG_ITEMS_PREFIX);
 
         return json_encode(array_merge($menuArray, $configSectionsArray), JSON_UNESCAPED_SLASHES);
+    }
+
+    /**
+     * Gets the first sequence key from the configuration storage
+     * @return string
+     */
+    public function getFirstSequenceKey()
+    {
+        return (string) $this->_scopeConfig->getValue(self::FIRST_SEQUENCE_KEY_CONFIG_PATH);
+    }
+
+    /**
+     * * Gets the first sequence key from the configuration storage
+     * @return string
+     */
+    public function getSecondSequenceKey()
+    {
+        return (string) $this->_scopeConfig->getValue(self::SECOND_SEQUENCE_KEY_CONFIG_PATH);
     }
 
     /**
