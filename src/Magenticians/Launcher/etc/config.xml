@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Store/etc/config.xsd">
+    <default>
+        <magenticians_launcher>
+            <keyboard>
+                <sequence_a>ctrl</sequence_a>
+                <sequence_b>m</sequence_b>
+            </keyboard>
+        </magenticians_launcher>
+    </default>
+</config>
