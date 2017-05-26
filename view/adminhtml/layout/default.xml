@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
-        <script src="Magenticians_Launcher::js/launcher.js"/>
-        <css src="Magenticians_Launcher::css/launcher.css"/>
+        <script src="Magenticians_Launcher::js/launcher.js" />
+        <css src="Magenticians_Launcher::css/launcher.css" />
     </head>
 
     <body>
@@ -11,7 +11,7 @@
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <block class="Magenticians\Launcher\Block\LauncherItems" />
+            <block class="Magenticians\Launcher\Block\LauncherItems" name="launcher_items" />
         </referenceContainer>
     </body>
 </page>
